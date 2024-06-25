@@ -19,8 +19,15 @@ Public Class ThisAddIn
         Dim inbox As Outlook.MAPIFolder = DirectCast(outlookApp.ActiveExplorer().Session.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox), Outlook.MAPIFolder)
         InboxItems = inbox.Items
 
-        Dim RibbornUI = Microsoft.Office.Tools.Ribbon.
+        'Dim RibbornUI = Microsoft.Office.Tools.Ribbon.
 
+    End Sub
+
+    'Active vacation
+    Public Sub ToggleVacationResponder(ByVal isOn As Boolean)
+        _settings.IsActive = isOn
+        Dim status As String = If(_settings.IsActive, "aktivní", "vypnuté")
+        MessageBox.Show($"Automatické odpovědi jsou nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown

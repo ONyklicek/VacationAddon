@@ -1,7 +1,7 @@
 ﻿Partial Class VacationRibbon
     Inherits Microsoft.Office.Tools.Ribbon.RibbonBase
 
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Public Sub New(ByVal container As System.ComponentModel.IContainer)
         MyClass.New()
 
@@ -12,7 +12,7 @@
 
     End Sub
 
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Public Sub New()
         MyBase.New(Globals.Factory.GetRibbonFactory())
 
@@ -22,7 +22,7 @@
     End Sub
 
     'Komponenta přepisuje metodu Dispose, aby vyčistila seznam součástí.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -39,38 +39,35 @@
     'POZNÁMKA: Následující proceduru vyžaduje Návrhář komponent
     'Dá se upravit pomocí Návrháře komponent.
     'Neupravovat pomocí editoru kódu
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim RibbonDialogLauncherImpl1 As Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher = Me.Factory.CreateRibbonDialogLauncher
         Me.Vacation = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
-        Me.btnToggle = Me.Factory.CreateRibbonToggleButton
+        Me.CheckBox1 = Me.Factory.CreateRibbonCheckBox
         Me.Vacation.SuspendLayout()
         Me.Group1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Vacation
         '
-        Me.Vacation.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office
         Me.Vacation.Groups.Add(Me.Group1)
         Me.Vacation.Label = "Dovolená"
         Me.Vacation.Name = "Vacation"
         '
         'Group1
         '
-        Me.Group1.DialogLauncher = RibbonDialogLauncherImpl1
-        Me.Group1.Items.Add(Me.btnToggle)
+        Me.Group1.Items.Add(Me.CheckBox1)
         Me.Group1.Name = "Group1"
         '
-        'btnToggle
+        'CheckBox1
         '
-        Me.btnToggle.Label = "ToggleButton1"
-        Me.btnToggle.Name = "btnToggle"
+        Me.CheckBox1.Label = "Aktivovat režim dovolené"
+        Me.CheckBox1.Name = "CheckBox1"
         '
         'VacationRibbon
         '
         Me.Name = "VacationRibbon"
-        Me.RibbonType = "Microsoft.Outlook.Mail.Read"
+        Me.RibbonType = "Microsoft.Outlook.Explorer"
         Me.Tabs.Add(Me.Vacation)
         Me.Vacation.ResumeLayout(False)
         Me.Vacation.PerformLayout()
@@ -82,7 +79,7 @@
 
     Friend WithEvents Vacation As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
-    Friend WithEvents btnToggle As Microsoft.Office.Tools.Ribbon.RibbonToggleButton
+    Friend WithEvents CheckBox1 As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
 End Class
 
 Partial Class ThisRibbonCollection

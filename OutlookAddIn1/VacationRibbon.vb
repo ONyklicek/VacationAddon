@@ -6,8 +6,8 @@ Public Class VacationRibbon
 
     End Sub
 
-    Private Sub ToggleButton1_Click(sender As Object, e As RibbonControlEventArgs) Handles btnToggle.Click
-        Dim isOn As Boolean = btnToggle.Checked
-
+    Private Sub CheckBox1_Click(sender As Object, e As RibbonControlEventArgs) Handles CheckBox1.Click
+        Dim isOn As Boolean = CheckBox1.Checked
+        Globals.ThisAddIn.ToggleVacationResponder(isOn)
     End Sub
 End Class
