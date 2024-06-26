@@ -2,13 +2,14 @@
 Imports Microsoft.Office.Interop.Outlook
 Imports Microsoft.Office.Tools.Ribbon
 Imports System.Windows.Forms
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.Office.Core
 
 Public Class ThisAddIn
     Private WithEvents InboxItems As Outlook.Items
 
     Private _settings As ResponderSettings
     Private _responder As Respounder
-
 
     Private Sub ThisAddIn_Startup() Handles Me.Startup
         'Boot
@@ -26,6 +27,14 @@ Public Class ThisAddIn
         _settings.IsActive = isOn
         Dim status As String = If(_settings.IsActive, "aktivní", "vypnuté")
         MessageBox.Show($"Automatické odpovědi jsou nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Public Sub TimeVacationResponder(ByVal startDate As Date, ByVal endDate As Date)
+        _settings.VacationStartDate = startDate
+        _settings.VacationEndDate = endDate
+
+        MessageBox.Show($"Automatické odpovědi budou odesílány dle rozvrhu. {vbCrLf}Od {startDate.ToShortDateString} do {endDate.ToShortDateString}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown

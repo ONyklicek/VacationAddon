@@ -237,6 +237,18 @@
     <AppDesigner Include="My Project\" />
     <Compile Include="Class\ResponderSettings.vb" />
     <Compile Include="Class\Respounder.vb" />
+    <Compile Include="SettingsVacationTime.Designer.vb">
+      <DependentUpon>SettingsVacationTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsVacationTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingVacationMessage.Designer.vb">
+      <DependentUpon>SettingVacationMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingVacationMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ThisAddIn.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -246,10 +258,17 @@
     <Compile Include="VacationRibbon.vb">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="SettingsVacationTime.resx">
+      <DependentUpon>SettingsVacationTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingVacationMessage.resx">
+      <DependentUpon>SettingVacationMessage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VacationRibbon.resx">
       <DependentUpon>VacationRibbon.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Core\keyTags.json" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
     </None>

@@ -44,7 +44,7 @@
         Me.Vacation = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
         Me.CheckBox1 = Me.Factory.CreateRibbonCheckBox
-        Me.Button1 = Me.Factory.CreateRibbonButton
+        Me.btnOenSettingsVacationTime = Me.Factory.CreateRibbonButton
         Me.btnSettingsReply = Me.Factory.CreateRibbonButton
         Me.Vacation.SuspendLayout()
         Me.Group1.SuspendLayout()
@@ -59,7 +59,7 @@
         'Group1
         '
         Me.Group1.Items.Add(Me.CheckBox1)
-        Me.Group1.Items.Add(Me.Button1)
+        Me.Group1.Items.Add(Me.btnOenSettingsVacationTime)
         Me.Group1.Items.Add(Me.btnSettingsReply)
         Me.Group1.Name = "Group1"
         '
@@ -68,12 +68,12 @@
         Me.CheckBox1.Label = "Aktivovat režim dovolené"
         Me.CheckBox1.Name = "CheckBox1"
         '
-        'Button1
+        'btnOenSettingsVacationTime
         '
-        Me.Button1.Image = Global.OutlookAddIn1.My.Resources.Resources.calendar
-        Me.Button1.Label = "Obdobý dovolené"
-        Me.Button1.Name = "Button1"
-        Me.Button1.ShowImage = True
+        Me.btnOenSettingsVacationTime.Image = Global.OutlookAddIn1.My.Resources.Resources.calendar
+        Me.btnOenSettingsVacationTime.Label = "Obdobý dovolené"
+        Me.btnOenSettingsVacationTime.Name = "btnOenSettingsVacationTime"
+        Me.btnOenSettingsVacationTime.ShowImage = True
         '
         'btnSettingsReply
         '
@@ -98,7 +98,7 @@
     Friend WithEvents Vacation As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents CheckBox1 As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
-    Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents btnOenSettingsVacationTime As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents btnSettingsReply As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
