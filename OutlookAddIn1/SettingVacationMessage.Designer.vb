@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SettingVacationMessage
     Inherits System.Windows.Forms.Form
 
     'Formulář přepisuje metodu Dispose, aby vyčistil seznam součástí.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,35 @@ Partial Class SettingVacationMessage
     'POZNÁMKA: Následující procedura je vyžadována Návrhářem Windows Form
     'Může být upraveno pomocí Návrháře Windows Form.  
     'Neupravovat pomocí editoru kódu
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(27, 111)
+        Me.RichTextBox1.Location = New System.Drawing.Point(25, 24)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(743, 247)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(693, 415)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Uložit"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'SettingVacationMessage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Name = "SettingVacationMessage"
         Me.Text = "tex"
@@ -46,4 +57,5 @@ Partial Class SettingVacationMessage
     End Sub
 
     Friend WithEvents RichTextBox1 As Windows.Forms.RichTextBox
+    Friend WithEvents Button1 As Windows.Forms.Button
 End Class

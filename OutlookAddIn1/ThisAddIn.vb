@@ -34,7 +34,11 @@ Public Class ThisAddIn
         _settings.VacationEndDate = endDate
 
         MessageBox.Show($"Automatické odpovědi budou odesílány dle rozvrhu. {vbCrLf}Od {startDate.ToShortDateString} do {endDate.ToShortDateString}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 
+    Public Sub MessageVacationResponder(ByVal message As String)
+        _settings.VacationMessage = message
+        MessageBox.Show(GetMessage)
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown
@@ -51,5 +55,17 @@ Public Class ThisAddIn
 
     Public Function GetEndDate() As Date
         Return _settings.VacationEndDate
+    End Function
+
+    Public Function GetStartDateShortDateString() As String
+        Return _settings.VacationStartDate.ToShortDateString
+    End Function
+
+    Public Function GetEndDateShortDateString() As String
+        Return _settings.VacationEndDate.ToShortDateString
+    End Function
+
+    Public Function GetMessage() As String
+        Return replaceKeyTags(_settings.VacationMessage)
     End Function
 End Class
