@@ -19,8 +19,6 @@ Public Class ThisAddIn
         Dim inbox As Outlook.MAPIFolder = DirectCast(outlookApp.ActiveExplorer().Session.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox), Outlook.MAPIFolder)
         InboxItems = inbox.Items
 
-        'Dim RibbornUI = Microsoft.Office.Tools.Ribbon.
-
     End Sub
 
     'Active vacation
@@ -31,7 +29,18 @@ Public Class ThisAddIn
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown
-
+        '
     End Sub
 
+    Public Function GetIsActive() As Boolean
+        Return _settings.IsActive
+    End Function
+
+    Public Function GetStartDate() As Date
+        Return _settings.VacationStartDate
+    End Function
+
+    Public Function GetEndDate() As Date
+        Return _settings.VacationEndDate
+    End Function
 End Class
