@@ -277,6 +277,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VacationRibbon.resx">
       <DependentUpon>VacationRibbon.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ThisAddIn.Designer.xml">

@@ -1,5 +1,4 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
-Imports System.Windows.Forms.Form
 
 Public Class VacationRibbon
     Private Sub VacationRibbon_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
