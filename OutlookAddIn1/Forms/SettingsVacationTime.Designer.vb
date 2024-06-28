@@ -27,18 +27,19 @@ Partial Class SettingsVacationTime
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.VacationPlanCheck = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'DateTimePickerStart
         '
-        Me.DateTimePickerStart.Location = New System.Drawing.Point(39, 22)
+        Me.DateTimePickerStart.Location = New System.Drawing.Point(40, 54)
         Me.DateTimePickerStart.Name = "DateTimePickerStart"
         Me.DateTimePickerStart.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePickerStart.TabIndex = 0
         '
         'DateTimePickerEnd
         '
-        Me.DateTimePickerEnd.Location = New System.Drawing.Point(39, 54)
+        Me.DateTimePickerEnd.Location = New System.Drawing.Point(40, 86)
         Me.DateTimePickerEnd.Name = "DateTimePickerEnd"
         Me.DateTimePickerEnd.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePickerEnd.TabIndex = 1
@@ -46,7 +47,7 @@ Partial Class SettingsVacationTime
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 26)
+        Me.Label1.Location = New System.Drawing.Point(13, 58)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 13)
         Me.Label1.TabIndex = 2
@@ -55,7 +56,7 @@ Partial Class SettingsVacationTime
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 58)
+        Me.Label2.Location = New System.Drawing.Point(13, 90)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 13)
         Me.Label2.TabIndex = 3
@@ -63,27 +64,41 @@ Partial Class SettingsVacationTime
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(164, 98)
+        Me.btnSave.Location = New System.Drawing.Point(164, 124)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Uložit"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'VacationPlanCheck
+        '
+        Me.VacationPlanCheck.AutoSize = True
+        Me.VacationPlanCheck.Location = New System.Drawing.Point(18, 19)
+        Me.VacationPlanCheck.Name = "VacationPlanCheck"
+        Me.VacationPlanCheck.Size = New System.Drawing.Size(194, 17)
+        Me.VacationPlanCheck.TabIndex = 5
+        Me.VacationPlanCheck.Text = "Odesílat odpovědi v daném období" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.VacationPlanCheck.UseVisualStyleBackColor = True
+        '
         'SettingsVacationTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(261, 145)
+        Me.ClientSize = New System.Drawing.Size(261, 164)
+        Me.Controls.Add(Me.VacationPlanCheck)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DateTimePickerEnd)
         Me.Controls.Add(Me.DateTimePickerStart)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SettingsVacationTime"
-        Me.Text = "Nastavení doby dovolený"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Nastavení obdobý dovolený"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -94,4 +109,5 @@ Partial Class SettingsVacationTime
     Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents btnSave As Windows.Forms.Button
+    Friend WithEvents VacationPlanCheck As Windows.Forms.CheckBox
 End Class

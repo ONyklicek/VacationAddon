@@ -2,13 +2,13 @@
 Imports System.Web.Script.Serialization
 Imports System.Reflection
 
-Module MessageResult
+Module VacationMessageResult
     Public Function replaceKeyTags(ByVal message As String) As String
         Dim resultMessage As String = message
 
         Dim keyTags As New Dictionary(Of String, String) From {
-            {"%startDate%", "GetStartDateShortDateString"},
-            {"%endDate%", "GetEndDateShortDateString"}
+            {"@startDate", "GetStartDateShortDateString"},
+            {"@endDate", "GetEndDateShortDateString"}
         }
 
         For Each kvp As KeyValuePair(Of String, String) In keyTags

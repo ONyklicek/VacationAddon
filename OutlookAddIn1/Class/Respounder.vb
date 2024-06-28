@@ -13,16 +13,15 @@ Public Class Respounder
     End Sub
 
     Private Function ShouldSendVacationReply(mail As MailItem) As Boolean
-        Dim currentDate As Date = Date.Now
-        Return _settings.IsActive AndAlso
-               currentDate >= _settings.VacationStartDate AndAlso
-               currentDate <= _settings.VacationEndDate
+        Dim currentDate As Date = Date.Today
+        Return _settings.IsActive Or _settings.isVacationPlanActive AndAlso
+            currentDate >= _settings.VacationStartDate.Date AndAlso
+            currentDate <= _settings.VacationEndDate.Date
     End Function
 
     Private Sub SendVacationReply(mail As MailItem)
         Dim reply As MailItem = mail.Reply()
-        reply.Body = _settings.VacationMessage
+        reply.Body = replaceKeyTags(_settings.VacationMessage)
         reply.Send()
     End Sub
-
 End Class

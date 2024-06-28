@@ -19,6 +19,8 @@ Public Class SettingsVacationTime
             DateTimePickerEnd.Value = Date.Today.AddDays(7)
         End If
 
+        VacationPlanCheck.Checked = Globals.ThisAddIn.GetisVacationPlanActive
+
     End Sub
 
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -28,7 +30,7 @@ Public Class SettingsVacationTime
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerStart.ValueChanged
         If DateTimePickerStart.Value < Date.Today Then
-            MessageBox.Show($"Nelze nastavit datum v minulosti.", "Naplatné datum", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Nelze nastavit datum v minulosti. od", "Naplatné datum", MessageBoxButtons.OK, MessageBoxIcon.Error)
             DateTimePickerStart.Value = Date.Today
         Else
             StartDate = DateTimePickerStart.Value
@@ -37,7 +39,7 @@ Public Class SettingsVacationTime
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerEnd.ValueChanged
         If DateTimePickerEnd.Value < Date.Today Then
-            MessageBox.Show($"Nelze nastavit datum v minulosti.", "Naplatné datum", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Nelze nastavit datum v minulosti. do", "Naplatné datum", MessageBoxButtons.OK, MessageBoxIcon.Error)
             DateTimePickerEnd.Value = Date.Today.AddDays(7)
         ElseIf DateTimePickerEnd.Value < DateTimePickerStart.Value Then
             MessageBox.Show($"Nelze nastavit datum před začátkem dovolené.", "Naplatné datum", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -50,4 +52,7 @@ Public Class SettingsVacationTime
         Globals.ThisAddIn.TimeVacationResponder(StartDate, EndDate)
     End Sub
 
+    Private Sub VacationPlanCheck_CheckedChanged(sender As Object, e As EventArgs) Handles VacationPlanCheck.CheckedChanged
+        Globals.ThisAddIn.ToogleVacationPlanResonder(VacationPlanCheck.Checked)
+    End Sub
 End Class

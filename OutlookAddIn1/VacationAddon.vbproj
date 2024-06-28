@@ -236,19 +236,25 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
-    <Compile Include="Class\ResponderSettings.vb" />
-    <Compile Include="Class\Respounder.vb" />
-    <Compile Include="Core\MessageResult.vb" />
-    <Compile Include="SettingsVacationTime.Designer.vb">
-      <DependentUpon>SettingsVacationTime.vb</DependentUpon>
+    <Compile Include="Forms\AvailableTags.Designer.vb">
+      <DependentUpon>AvailableTags.vb</DependentUpon>
     </Compile>
-    <Compile Include="SettingsVacationTime.vb">
+    <Compile Include="Forms\AvailableTags.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingVacationMessage.Designer.vb">
+    <Compile Include="Class\ResponderSettings.vb" />
+    <Compile Include="Class\Respounder.vb" />
+    <Compile Include="Modules\VacationMessageResult.vb" />
+    <Compile Include="Forms\SettingsVacationTime.Designer.vb">
+      <DependentUpon>SettingsVacationTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsVacationTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingVacationMessage.Designer.vb">
       <DependentUpon>SettingVacationMessage.vb</DependentUpon>
     </Compile>
-    <Compile Include="SettingVacationMessage.vb">
+    <Compile Include="Forms\SettingVacationMessage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThisAddIn.vb">
@@ -260,10 +266,13 @@
     <Compile Include="VacationRibbon.vb">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="SettingsVacationTime.resx">
+    <EmbeddedResource Include="Forms\AvailableTags.resx">
+      <DependentUpon>AvailableTags.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsVacationTime.resx">
       <DependentUpon>SettingsVacationTime.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingVacationMessage.resx">
+    <EmbeddedResource Include="Forms\SettingVacationMessage.resx">
       <DependentUpon>SettingVacationMessage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VacationRibbon.resx">

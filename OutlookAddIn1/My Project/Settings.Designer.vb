@@ -99,6 +99,18 @@ Namespace My
                 Me("VacationEndDate") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property isVacationPlanActive() As Boolean
+            Get
+                Return CType(Me("isVacationPlanActive"),Boolean)
+            End Get
+            Set
+                Me("isVacationPlanActive") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
