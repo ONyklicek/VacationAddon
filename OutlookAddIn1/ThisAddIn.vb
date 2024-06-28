@@ -44,7 +44,7 @@ Public Class ThisAddIn
         MessageBox.Show($"Režim dovolené je nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
-    Public Sub ToogleVacationPlanResonder(ByVal isOnPlan As Boolean)
+    Public Sub ToggleVacationPlanResonder(ByVal isOnPlan As Boolean)
         _settings.isVacationPlanActive = isOnPlan
         Dim status As String = If(_settings.isVacationPlanActive, "aktivní", "vypnuté")
         MessageBox.Show($"Režim dovolené dle plánu je nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
