@@ -11,24 +11,22 @@ Public Class ThisAddIn
     Dim inbox As Outlook.MAPIFolder
     Dim accounts As Outlook.Accounts
     Dim defaultAccount As Outlook.Account
-    Dim store As Outlook.Store
     Dim WithEvents items As Outlook.Items
 
     Private _settings As ResponderSettings
-    Private _responder As Respounder
+    Private _responder As ResponderMail
 
     Private Sub ThisAddIn_Startup() Handles Me.Startup
         'Boot
         _settings = New ResponderSettings
-        _responder = New Respounder(_settings)
+        _responder = New ResponderMail(_settings)
 
 
         outlookNameSpace = Me.Application.GetNamespace("MAPI")
         defaultAccount = outlookNameSpace.Accounts.Item(1)
         accounts = outlookNameSpace.Accounts
         inbox = defaultAccount.DeliveryStore.GetDefaultFolder(OlDefaultFolders.olFolderInbox)
-        'inbox = store.GetDefaultFolder(OlDefaultFolders.olFolderInbox)
-        'inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox).Parent.Folders(defaultAccount.DeliveryStore)
+
 
         'inbox = outlookNameSpace.Folders(defaultAccount.DeliveryStore.DisplayName).Folders(olFolderInbox)
 

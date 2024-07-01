@@ -24,7 +24,7 @@
     <ProjectGuid>{C0AD28D5-D35E-461F-AB39-8A17C4AFD910}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>OutlookAddIn1</RootNamespace>
-    <AssemblyName>VacationAddon</AssemblyName>
+    <AssemblyName>Dovolená</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DefineConstants>VSTO40,UseOfficeInterop</DefineConstants>
     <StartupObject>
@@ -40,11 +40,11 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>VacationAddon</ProductName>
-    <PublisherName />
+    <ProductName>Dovolená</ProductName>
+    <PublisherName>Onyklicek</PublisherName>
     <SupportUrl />
-    <FriendlyName>VacationAddon</FriendlyName>
-    <OfficeApplicationDescription />
+    <FriendlyName>Dovolená</FriendlyName>
+    <OfficeApplicationDescription>Modul dovolená pro automatické odpovědi.</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
@@ -98,7 +98,7 @@
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>VacationAddon.xml</DocumentationFile>
+    <DocumentationFile>Dovolená.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
@@ -127,7 +127,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>VacationAddon.xml</DocumentationFile>
+    <DocumentationFile>Dovolená.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
@@ -240,6 +240,7 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
+    <Compile Include="Class\ResponderMail.vb" />
     <Compile Include="Forms\AccountSelector.Designer.vb">
       <DependentUpon>AccountSelector.vb</DependentUpon>
     </Compile>
@@ -253,7 +254,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Class\ResponderSettings.vb" />
-    <Compile Include="Class\Respounder.vb" />
     <Compile Include="Modules\VacationMailResult.vb" />
     <Compile Include="Forms\SettingsVacationTime.Designer.vb">
       <DependentUpon>SettingsVacationTime.vb</DependentUpon>
@@ -320,7 +320,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="VacationAddon_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar.png" />
@@ -361,7 +360,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>VacationAddon_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
