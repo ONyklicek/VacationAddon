@@ -57,9 +57,9 @@ Public Class SettingsVacationTime
 
     End Function
 
-    Private Function VacationPlanCheck_CheckedChanged(sender As Object, e As EventArgs) Handles VacationPlanCheck.CheckedChanged
+    Private Sub VacationPlanCheck_CheckedChanged(sender As Object, e As EventArgs) Handles VacationPlanCheck.CheckedChanged
         isOnVacationPlan = VacationPlanCheck.Checked
-    End Function
+    End Sub
 
     Private Overloads Function Validate() As Boolean
         'Validate start date

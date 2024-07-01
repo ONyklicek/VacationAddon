@@ -2,7 +2,7 @@
 Imports System.Web.Script.Serialization
 Imports System.Reflection
 
-Module VacationMessageResult
+Module VacationMailResult
     Public Function replaceKeyTags(ByVal message As String) As String
         Dim resultMessage As String = message
 

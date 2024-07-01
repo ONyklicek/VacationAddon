@@ -9,6 +9,9 @@ Imports System.Diagnostics
 Public Class ThisAddIn
     Dim outlookNameSpace As Outlook.NameSpace
     Dim inbox As Outlook.MAPIFolder
+    Dim accounts As Outlook.Accounts
+    Dim defaultAccount As Outlook.Account
+    Dim store As Outlook.Store
     Dim WithEvents items As Outlook.Items
 
     Private _settings As ResponderSettings
@@ -21,7 +24,15 @@ Public Class ThisAddIn
 
 
         outlookNameSpace = Me.Application.GetNamespace("MAPI")
-        inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox)
+        defaultAccount = outlookNameSpace.Accounts.Item(1)
+        accounts = outlookNameSpace.Accounts
+        inbox = defaultAccount.DeliveryStore.GetDefaultFolder(OlDefaultFolders.olFolderInbox)
+        'inbox = store.GetDefaultFolder(OlDefaultFolders.olFolderInbox)
+        'inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox).Parent.Folders(defaultAccount.DeliveryStore)
+
+        'inbox = outlookNameSpace.Folders(defaultAccount.DeliveryStore.DisplayName).Folders(olFolderInbox)
+
+        'inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox)
         items = inbox.Items
 
         If GetIsActive() Then

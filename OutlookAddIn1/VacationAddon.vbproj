@@ -30,8 +30,9 @@
     <StartupObject>
     </StartupObject>
     <ResolveComReferenceSilent>true</ResolveComReferenceSilent>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>publikovat\</PublishUrl>
+    <PublishUrl>C:\Users\uzivatel\buld\</PublishUrl>
     <InstallUrl />
     <TargetCulture>cs</TargetCulture>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
@@ -39,7 +40,6 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
     <ProductName>VacationAddon</ProductName>
     <PublisherName />
     <SupportUrl />
@@ -139,7 +139,11 @@
     <Reference Include="Accessibility" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -236,6 +240,12 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
+    <Compile Include="Forms\AccountSelector.Designer.vb">
+      <DependentUpon>AccountSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\AvailableTags.Designer.vb">
       <DependentUpon>AvailableTags.vb</DependentUpon>
     </Compile>
@@ -244,7 +254,7 @@
     </Compile>
     <Compile Include="Class\ResponderSettings.vb" />
     <Compile Include="Class\Respounder.vb" />
-    <Compile Include="Modules\VacationMessageResult.vb" />
+    <Compile Include="Modules\VacationMailResult.vb" />
     <Compile Include="Forms\SettingsVacationTime.Designer.vb">
       <DependentUpon>SettingsVacationTime.vb</DependentUpon>
     </Compile>
@@ -266,6 +276,9 @@
     <Compile Include="VacationRibbon.vb">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Forms\AccountSelector.resx">
+      <DependentUpon>AccountSelector.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AvailableTags.resx">
       <DependentUpon>AvailableTags.vb</DependentUpon>
     </EmbeddedResource>
@@ -336,7 +349,19 @@
     </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3D44A9B3D4F30B9BBDEF9260431BC1040D4CA235</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5232A0253B7A3E57D77AA861F1613E785902B66E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>Windows</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>VacationAddon_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
