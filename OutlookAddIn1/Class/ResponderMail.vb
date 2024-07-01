@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.Office.Interop.Outlook
 
-Public Class Respounder
+Public Class ResponderMail
     Private _settings As ResponderSettings
 
     Public Sub New(settings As ResponderSettings)
