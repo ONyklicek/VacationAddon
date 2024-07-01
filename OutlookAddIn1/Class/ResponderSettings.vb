@@ -13,6 +13,16 @@ Public Class ResponderSettings
         End Set
     End Property
 
+    Public Property isVacationPlanActive As Boolean
+        Get
+            Return My.Settings.isVacationPlanActive
+        End Get
+        Set(value As Boolean)
+            My.Settings.isVacationPlanActive = value
+            My.Settings.Save()
+        End Set
+    End Property
+
     Public Property VacationMessage As String
         Get
             Return My.Settings.VacationMessage
