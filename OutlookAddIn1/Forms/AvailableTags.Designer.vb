@@ -83,6 +83,7 @@ Partial Class AvailableTags
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "@signature"
+        Me.Label3.Visible = False
         '
         'Label4
         '
@@ -110,6 +111,7 @@ Partial Class AvailableTags
         Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Podpis"
+        Me.Label6.Visible = False
         '
         'Button1
         '

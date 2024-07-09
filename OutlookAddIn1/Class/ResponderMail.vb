@@ -19,6 +19,11 @@ Public Class ResponderMail
             currentDate <= _settings.VacationEndDate.Date
     End Function
 
+
+    ''
+    ' TODO
+    ' - Add mail signature
+    ' 
     Private Sub SendVacationReply(mail As MailItem)
         Dim reply As MailItem = mail.Reply()
         reply.Body = replaceKeyTags(_settings.VacationMessage)
