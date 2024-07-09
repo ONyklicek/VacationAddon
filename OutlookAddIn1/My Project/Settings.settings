@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="VacationMessage" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Od @startDate do @endDate</Value>
     </Setting>
     <Setting Name="VacationStartDate" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />

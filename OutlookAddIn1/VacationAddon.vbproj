@@ -254,6 +254,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Class\ResponderSettings.vb" />
+    <Compile Include="Modules\Message.vb" />
     <Compile Include="Modules\VacationMailResult.vb" />
     <Compile Include="Forms\SettingsVacationTime.Designer.vb">
       <DependentUpon>SettingsVacationTime.vb</DependentUpon>
