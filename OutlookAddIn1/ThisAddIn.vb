@@ -26,10 +26,7 @@ Public Class ThisAddIn
         defaultAccount = outlookNameSpace.Accounts.Item(1)
         accounts = outlookNameSpace.Accounts
         inbox = defaultAccount.DeliveryStore.GetDefaultFolder(OlDefaultFolders.olFolderInbox)
-
-
         'inbox = outlookNameSpace.Folders(defaultAccount.DeliveryStore.DisplayName).Folders(olFolderInbox)
-
         'inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox)
         items = inbox.Items
 
@@ -49,26 +46,23 @@ Public Class ThisAddIn
     'Active vacation
     Public Sub ToggleVacationResponder(ByVal isOn As Boolean)
         _settings.IsActive = isOn
-        Dim status As String = If(_settings.IsActive, "aktivní", "vypnuté")
-        MessageBox.Show($"Režim dovolené je nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Message.HasActive(_settings.IsActive)
     End Sub
 
     Public Sub ToggleVacationPlanResonder(ByVal isOnPlan As Boolean)
         _settings.isVacationPlanActive = isOnPlan
-        Dim status As String = If(_settings.isVacationPlanActive, "aktivní", "vypnuté")
-        MessageBox.Show($"Režim dovolené dle plánu je nyní {status}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'Message.HasActiveByPlan(_settings.isVacationPlanActive)
     End Sub
 
     Public Sub TimeVacationResponder(ByVal startDate As Date, ByVal endDate As Date)
         _settings.VacationStartDate = startDate
         _settings.VacationEndDate = endDate
-
-        MessageBox.Show($"Automatické odpovědi budou odesílány v období {vbCrLf}od {startDate.ToShortDateString} do {endDate.ToShortDateString}.", "Informace", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'Message.HasSetDate(startDate, endDate)
     End Sub
 
     Public Sub MessageVacationResponder(ByVal message As String)
         _settings.VacationMessage = message
-        MessageBox.Show(GetMessageReplaceKeyTags)
+        HasSetMessage()
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown
@@ -79,7 +73,7 @@ Public Class ThisAddIn
         Return _settings.IsActive
     End Function
 
-    Public Function GetisVacationPlanActive() As Boolean
+    Public Function GetIsVacationPlanActive() As Boolean
         Return _settings.isVacationPlanActive
     End Function
 

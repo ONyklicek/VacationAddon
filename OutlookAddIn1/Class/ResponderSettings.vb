@@ -1,7 +1,6 @@
 ﻿Imports System
 
 Public Class ResponderSettings
-
     Public Property IsActive As Boolean
         Get
             Return My.Settings.isActive
